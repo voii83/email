@@ -1,90 +1,116 @@
 @import "../settings/_mixins.scss";
 
+/*Basic*/
 body {
-  @include margin(0, auto, 0, auto);
+  @include margin(0,0,0,0);
+  @include padding(0,0,0,0);
+  min-width: 100%;
   background-color: $lite-color;
 }
 
 table {
-  border-collapse: collapse;
+  @include font-normal();
   border-spacing: 0;
+  cellpadding: 0;
+  cellspacing: 0;
+  border: 0;
 }
 
-td {
-  @include font-normal();
-  @include margin(0,0,0,0);
+td{
   @include padding(0,0,0,0);
-  @include text-size-adjust(none);
 }
 
 img {
+  border: 0;
+}
+
+.wrapper {
+  @include text-size-adjust(100%);
+  width: 100%;
+  table-layout: fixed;
+}
+
+.webkit {
+  max-width: 600px;
+}
+
+/* Windows Phone Viewport Fix */
+@-ms-viewport {
+  width: device-width;
+}
+
+.outer {
   @include margin(0,auto,0,auto);
-  @include padding(0,0,0,0);
-  display: block;
   width: 100%;
-  outline: none;
-  border: none;
-  text-decoration: none;
-  -ms-interpolation-mode: bicubic;
+  max-width: 600px;
 }
 
-.table-email {
-  @include margin(0, auto, 0, auto);
-  max-width: $width;
-}
-
-.table-header {
-  background-color: $accent-color-1;
+.full-width-image img {
   width: 100%;
+  height: auto;
 }
 
-.td-header {
-  @include padding(10px, 10px, 10px, 10px);
-  text-align: center;
-  font-size: round($fz * 1.5);
+.inner {
+  @include padding(10px,10px,10px,10px);
 }
 
-.table-medium {
-  background-color: $accent-color-2;
-}
-
-.td-medium-text {
-  @include padding(15px, 10px, 15px, 10px);
-}
-
-.table-columns {
-  background-color: $accent-color-3;
-  width: 100%;
-}
-
-.td-columns {
-  @include padding(10px, 5px, 10px, 5px);
-}
-
-.table-col {
-  width: 50%;
-}
-
-.td-col {
-  @include padding(5px, 10px, 5px, 10px);
-  width: $width / 2;
-  text-align: center;
-}
-
-.col-img {
-  max-width: 270px;
-  max-height: 180px;
-}
-
-.link-col-action {
-  @include font-normal();
+p {
   @include margin(0,0,0,0);
-  @include padding(5px,15px,5px,15px);
-  @include text-size-adjust(none);
-  background-color: $action-color;
-  color: $lite-color;
-  display: inline-block;
+}
+
+a {
+  color: $link-color;
+  text-decoration: underline;
+}
+
+.h1 {
+  @include margin(0,0,18px,0);
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.h2 {
+  @include margin(0,0,12px,0);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* One column layout */
+.one-column .contents {
+  text-align: left;
+}
+
+.one-column p {
+  font-size: 14px;
+  @include margin(0,0,10px,0);
+}
+
+/* Two column layout */
+.two-column {
   text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
+  font-size: 0;
+}
+.two-column .column {
+  width: 100%;
+  max-width: 300px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.contents {
+  width: 100%;
+}
+
+.two-column .contents {
+  font-size: 14px;
+  text-align: left;
+}
+
+.two-column img {
+  width: 100%;
+  height: auto;
+}
+
+.two-column .text {
+  @include padding(10px,0,0,0);
 }

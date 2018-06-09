@@ -19,10 +19,10 @@
 }
 
 @mixin margin ($mt, $mr, $mb, $ml) {
-  margin-top: $mt;
-  margin-right: $mr;
-  margin-bottom: $mb;
-  margin-left: $ml;
+  Margin-top: $mt;
+  Margin-right: $mr;
+  Margin-bottom: $mb;
+  Margin-left: $ml;
 }
 
 @mixin padding ($pt, $pr, $pb, $pl) {
